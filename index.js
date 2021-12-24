@@ -12,7 +12,7 @@ class Bubble{
 
     init(){
         if(window.innerWidth < 570)
-            this.count = 70;
+            this.count = 30;
         for(let i = 1; i < this.count; i++){
             this.x = Math.floor(Math.random() * window.innerWidth);
             this.y = Math.floor(Math.random() * window.innerHeight);
