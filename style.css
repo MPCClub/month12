@@ -1,0 +1,144 @@
+@font-face {
+  font-family: Montserrat-Regular;
+  src: url('../fonts/montserrat/Montserrat-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url('../fonts/montserrat/Montserrat-Bold.ttf'); 
+}
+
+@font-face {
+  font-family: Montserrat-ExtraBold;
+  src: url('../fonts/montserrat/Montserrat-ExtraBold.ttf'); 
+}
+
+@font-face {
+  font-family: Montserrat-Medium;
+  src: url('../fonts/montserrat/Montserrat-Medium.ttf'); 
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+	font-family: Montserrat-Regular, sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e8ffe8;
+}
+
+.tree{
+    position: relative;
+    top:-180px;
+    width: 100px;
+    height: 100px;
+    transform-style:  preserve-3d;
+    transform: rotateX(-20deg) rotateY(30deg);
+    animation:  turn-around 5s  linear infinite;
+}
+
+.tree div{
+    position: absolute ;
+    top:0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style:  preserve-3d;
+    transform: translateY(calc(50px * var(--j)));
+}
+
+.tree div.top img{
+    position: absolute;
+    top:-31px;
+    left: 21px;
+    width: 60px;
+}
+
+.tree div.top span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,#69c069,#77dd77);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform-origin: bottom;
+    border-bottom: 10px solid #00000019;
+    transform: rotateY(calc(90deg * var(--i)))
+    translateZ(50px) rotateX(30deg);
+
+
+}
+.tree div.bottom span{
+    position: absolute;
+    top: 250px;
+    left: 41px;
+    width: 20%;
+    height: 80%;
+    background: #a3740ec5;
+    transform: rotateY(calc(90deg * var(--i))) rotateX(0)
+    translateZ(10px) ;
+
+}
+
+form{
+    display: block;
+    position: relative;
+}
+
+input{
+    position: absolute;
+    top: 60px;
+    left: -25px;
+    height: 35px;
+    padding-left: 6px;
+    border-radius: 5px;
+    border: 1px solid #69c069;
+}
+
+.content i{
+    background-color: rgb(182, 174, 174);
+    border-radius: 100%;
+    /* animation: bubble 2s linear infinite; */
+}
+
+.content i:nth-child(even){
+    background-color: transparent;
+    border: 1px solid rgb(182, 174, 174);
+}
+
+@keyframes bubble{
+    0%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    80%{
+        opacity: 0.1;
+    }
+
+    100%{
+        opacity: 0;
+        transform: translateY(2000%);
+    }
+}
+@keyframes turn-around{
+    0%{
+        transform: rotateX(-25deg) rotateY(360deg);
+    }
+
+    100%{
+        transform: rotateX(-25deg) rotateY(0deg);
+
+    }
+}
