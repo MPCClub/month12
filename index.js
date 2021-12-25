@@ -62,4 +62,26 @@ class Bubble{
 
 var bubble = new Bubble(".bubbles");
 
+var inputElement = document.querySelector("input");
 
+function isName(value) {
+    if(value){
+        return true;
+    }
+    return false;
+}
+
+var formElement = document.querySelector("form");
+formElement.onsubmit = function(){
+    if(isName(inputElement.value)){
+        return true;
+    }
+    else{
+        formElement.classList.add("require");
+        return false;
+    }
+}
+
+inputElement.oninput = function(){
+    formElement.classList.remove('require');
+}
