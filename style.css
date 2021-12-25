@@ -28,14 +28,18 @@
 body, html {
 	font-family: Montserrat-Regular, sans-serif;
 }
-
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #e8ffe8;
+    /* background-color: #e8ffe8; */
+    background-color: #fdf498;
 }
+/* .content{
+    position: relative;
+    left: 300%;
+} */
 
 .tree{
     position: relative;
@@ -86,6 +90,7 @@ body{
     width: 20%;
     height: 80%;
     background: #a3740ec5;
+    border-bottom: #a3740ec5 ;
     transform: rotateY(calc(90deg * var(--i))) rotateX(0)
     translateZ(10px) ;
 
@@ -95,10 +100,11 @@ form{
     display: block;
     position: relative;
     left: -45px;
+    top:30px;
 }
 
 input{
-    margin-top:60px ;
+    margin-top:10px ;
     margin-right: 5px;
     height: 35px;
     padding-left: 6px;
@@ -126,7 +132,7 @@ button{
     content: "!";
     color:#fe4a49 ;
     position: absolute;
-    top:68px;
+    top:17px;
     left: 160px;
     height: 30px;
 
@@ -167,5 +173,17 @@ button{
     100%{
         transform: rotateX(-25deg) rotateY(0deg);
 
+    }
+}
+
+@media (max-width:670px){
+    .tree{
+        top: -100px;
+        left: 25%;
+    }
+
+    form{
+        top:112px;
+        left: 4%;
     }
 }
